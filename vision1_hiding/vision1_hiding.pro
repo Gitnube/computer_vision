@@ -24,17 +24,20 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
+        acoregenerator.cpp \
         dxcoregenerator.cpp \
         dycoregenerator.cpp \
         emptyimageexpander.cpp \
         fillimageexpander.cpp \
         gausscoregenerator.cpp \
+        imagenormalizer.cpp \
         mainwindow.cpp \
         mirrorimageexpander.cpp \
         simplefilter.cpp \
         sobelfilter.cpp
 
 HEADERS  += mainwindow.h \
+    acoregenerator.h \
     dxcoregenerator.h \
     dycoregenerator.h \
     emptyimageexpander.h \
@@ -43,6 +46,7 @@ HEADERS  += mainwindow.h \
     icoregenerator.h \
     iimageexpander.h \
     iimagefilter.h \
+    imagenormalizer.h \
     mirrorimageexpander.h \
     simplefilter.h \
     sobelfilter.h

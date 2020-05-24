@@ -13,9 +13,12 @@ public:
     QImage *process(IImageExpander *expander, QImage *img) override;
 private:
     QImage *convolution(QImage *input);
-    double ** generateCore();
+    QImage *fullConvolution(QImage *input);
+    QImage *sepConvolution(QImage *input);
+    double * xConvolution(const double *input, int height, int width);
+    double * yConvolution(const double *input, int height, int width);
     int size;
-    double **core;
+    double **core, *coreX, *coreY;
     ICoreGenerator *generator;
     IImageExpander *expander;
 };

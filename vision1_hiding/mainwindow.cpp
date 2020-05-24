@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent) :
     qsrand(time.secsTo(QTime::currentTime()));
     sc=new QGraphicsScene();
     ui->graphicsView->setScene(sc);
-    original = (new QImage("inp.jpg"))->convertToFormat(QImage::Format_Grayscale8);
+    original = (new QImage("inp1.jpg"))->convertToFormat(QImage::Format_Grayscale8);
     if(original.isNull())
         QMessageBox::critical(
                     this,
@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent) :
     imageFilters->insert("DX", new SimpleFilter(new DXCoreGenerator()));
     imageFilters->insert("DY", new SimpleFilter(new DYCoreGenerator()));
     imageFilters->insert("Sobel", new SobelFilter());
-    imageFilters->insert("Gauss", new SimpleFilter(new GaussCoreGenerator(2)));
+    imageFilters->insert("Gauss", new SimpleFilter(new GaussCoreGenerator(2), 13));
     ui->imageFilterType->addItems(imageFilters->keys());
     imageExpanders = new QMap<QString, IImageExpander *>();
     imageExpanders->insert("Не заполнять", new EmptyImageExpander());

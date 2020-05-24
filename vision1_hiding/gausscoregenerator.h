@@ -1,13 +1,15 @@
 #ifndef GAUSSCOREGENERATOR_H
 #define GAUSSCOREGENERATOR_H
 
-#include "icoregenerator.h"
+#include "acoregenerator.h"
 
-class GaussCoreGenerator : public ICoreGenerator
+class GaussCoreGenerator : public ACoreGenerator
 {
 public:
     GaussCoreGenerator(double sigma);
     double **generate(int size) override;
+    double * generateX(int size) override;
+    double * generateY(int size) override;
 private:
     double sigma;
 };
